@@ -60,8 +60,7 @@ public class UserRestController {
 			throw new RuntimeException("user id not found -");
 		}
 		//retornará al usuario con id pasado en la url
-		
-		userService.save(id); 
+		userService.save(id);
 		return id;
 	}
 	
@@ -69,13 +68,12 @@ public class UserRestController {
 	http://127.0.0.1:8080/api/users/  */
 	@PostMapping("/users")
 	public User addUser(@RequestBody User user) {
+		System.out.println(user);
 		user.setId(0);
 		//Este metodo guardará al usuario enviado
-		userService.save(user);
-		user.setEntry_time(null);
+		user.setEntryTime(null);
 		userService.save(user);
 		return user;
-		
 	}
 	/*Este método se hará cuando por una petición PUT (como indica la anotación) se llame a la url
 	http://127.0.0.1:8080/api/users/  */
@@ -106,7 +104,7 @@ public class UserRestController {
 	/*Este método se hará cuando por una petición DELETE (como indica la anotación) se llame a la url + id del usuario
 	http://127.0.0.1:8080/api/users/1  */
 	@DeleteMapping("users/{userId}")
-	public String deteteUser(@PathVariable int userId) {
+	public String deleteUser(@PathVariable int userId) {
 		
 		User user = userService.findById(userId);
 		

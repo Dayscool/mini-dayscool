@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc894713-ec50-43f0-9b63-6c354f37ff2d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms_user_generator/ms_user_generator.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ms_user_generator/ms_user_generator.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/dayscool/ms_user/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/dayscool/ms_user/model/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/dayscool/ms_user/repository/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/dayscool/ms_user/repository/UserRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +38,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ms_authentication" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="MsUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -55,7 +64,11 @@
       <workItem from="1603202244807" duration="614000" />
       <workItem from="1603203462488" duration="691000" />
       <workItem from="1603212694575" duration="891000" />
-      <workItem from="1603299566748" duration="126000" />
+      <workItem from="1603299566748" duration="760000" />
+      <workItem from="1603555965470" duration="1565000" />
+      <workItem from="1603558774742" duration="1911000" />
+      <workItem from="1603572300923" duration="1000" />
+      <workItem from="1603574796582" duration="2389000" />
     </task>
     <servers />
   </component>
@@ -63,9 +76,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603212701972">
+    <state x="739" y="315" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1603575712746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603212701972" />
+    <state x="739" y="315" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603575712746" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603575572198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603575572198" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1603557084148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603557084148" />
   </component>
 </project>

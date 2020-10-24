@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
-import java.util.Date;
-
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,9 +27,8 @@ public class User {
 	@Column(name="mail")
 	private String mail;
 
-	@Column(name="birth_date")
-	//@CreationTimestamp
-	private Date birth_date;
+	@Column(name="birthDate")
+	private LocalDate birthDate;
 	
 	@Column(name="career")
 	private String career;
@@ -43,25 +42,25 @@ public class User {
 	@Column(name="password")
 	private String password;	
 
-	@Column(name="entry_time")
-	@UpdateTimestamp
-	private Date entry_time;
+	@Column(name="entryTime")
+	@CreationTimestamp
+	private LocalDateTime entryTime;
 
 	public User() {}
 	
 	public User( int id,
 	String username, String mail,
-	Date birth_date, String career, String role,
-	String name, String password, Date entry_time) {
+	LocalDate birthDate, String career, String role,
+	String name, String password, LocalDateTime entry_time) {
 		this.id = id;
 		this.username = username;
 		this.mail = mail;
-		this.birth_date = birth_date;		
+		this.birthDate = birthDate;
 		this.career = career;
 		this.role = role;
 		this.name = name;
 		this.password = password; 
-		this.entry_time = entry_time;
+		this.entryTime = entryTime;
 	}
 
 	public int getId() {
@@ -89,12 +88,13 @@ public class User {
 	}
 
 
-	public Date getBirth_date() {
-		return birth_date;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirth_date(Date birth_date) {
-		this.birth_date = birth_date;
+	public void setBirthDate(String birthDate) {
+		System.out.println(birthDate);
+		this.birthDate = LocalDate.parse(birthDate);
 	}
 
 	public String getCareer() {
@@ -129,12 +129,12 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getEntry_time() {
-		return entry_time;
+	public LocalDateTime getEntryTime() {
+		return entryTime;
 	}
 
-	public void setEntry_time(Date entry_time) {
-		this.entry_time = entry_time;
+	public void setEntryTime(LocalDateTime entry_time) {
+		this.entryTime = null;
 	}
 
 	@Override
@@ -144,12 +144,12 @@ public class User {
 		", mail=" + mail + 
 		", username=" + username + 
 		", mail=" + mail + 
-		", birth_date=" + birth_date + 
+		", birth_date=" + birthDate +
 		", career=" + career + 
 		", role=" + role + 
 		", name=" + name + 
 		", password=" + password + 
-		", entry_time=" + entry_time + 
+		", entry_time=" + entryTime +
 		"]";
 	}
 	

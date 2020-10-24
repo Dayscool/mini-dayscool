@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO{
 	public List<User> findAll() {
 		Session currentSession = entityManager.unwrap(Session.class);
 
-		Query<User> theQuery = currentSession.createQuery("from User", User.class);
+		Query<User> theQuery = currentSession.createQuery("from user", User.class);
 		
 		List<User> users = theQuery.getResultList();
 		
@@ -30,6 +30,7 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
+	
 	public User findById(int id) {
 		
 		Session currentSession = entityManager.unwrap(Session.class);
@@ -44,7 +45,7 @@ public class UserDAOImpl implements UserDAO{
 	public User findByUsernameOrMailAndPassword(String usernameMail, String password) {	
 			
 		Session currentSession = entityManager.unwrap(Session.class);		
-		String w="SELECT * FROM User where (username='"+usernameMail+"' or username='"+usernameMail+"') and password='"+password+"'";
+		String w="SELECT * FROM user where (username='"+usernameMail+"' or username='"+usernameMail+"') and password='"+password+"'";
 		Query<User>  theQuery = currentSession.createSQLQuery(w).addEntity(User.class); 
 		List<User> users = theQuery.getResultList();	
 		
@@ -64,7 +65,8 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public void updateEntry_time(User user) { 
 		Session currentSession = entityManager.unwrap(Session.class);	
-		user.setEntry_time(null);
+		;
+		user.setEntryTime(null);
 		currentSession.update(user);
 	}
 
@@ -72,7 +74,7 @@ public class UserDAOImpl implements UserDAO{
 	public void deleteById(int id) {
 		Session currentSession = entityManager.unwrap(Session.class);
 
-		Query<User> theQuery = currentSession.createQuery("delete from User where id=:idUser");
+		Query<User> theQuery = currentSession.createQuery("delete from user where id=:idUser");
 		
 		theQuery.setParameter("idUser", id);
 		theQuery.executeUpdate();		
