@@ -32,22 +32,24 @@ services:
   ms_user:
     container_name: ms_user
     build: ./back-end/ms_user/
+    # command: ["./wait-for-it.sh", "ms_user_db:3306", "--", "echo", "db is up"]
     depends_on:
       - ms_user_db
     ports:
       - "10100:10100"
 
-  ms_cursos:
-    container_name: ms_cursos
-    build: ./back-end/ms_cursos
+  # ms_cursos:
+  #   container_name: ms_cursos
+  #   build: ./back-end/ms_cursos
 
   ms_authentication:
     container_name: ms_authentication
     build: ./back-end/ms_authentication/demo
+    # command: ["./wait-for-it.sh", "ms_user_db:3306", "--", "echo", "db is up"]
     depends_on:
       - ms_user_db
     ports:
-      - "10200:10200"
+      - "8080:8080"
 
 networks:
   default:
