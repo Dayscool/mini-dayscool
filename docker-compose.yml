@@ -1,17 +1,11 @@
-version: "3.5"
+version: "3"
 services:
-  # web_front:
-  #   container_name: web_front
-  #   build: ./front-end/dayscool-web/
-  #   ports:
-  #     - "8080:8080"
-  #   mem_limit: 200m
-
   api_getway:
     container_name: api_getway
     build: ./api_getway/DayscoolAPI
     ports:
       - "5000:5000"
+
   ms_user_db:
     container_name: ms_user_db
     image: "mysql:latest"
@@ -32,22 +26,37 @@ services:
   ms_user:
     container_name: ms_user
     build: ./back-end/ms_user/
-    # command: ["./wait-for-it.sh", "ms_user_db:3306", "--", "echo", "db is up"]
-    depends_on:
-      - ms_user_db
     ports:
       - "10100:10100"
 
-  # ms_cursos:
-  #   container_name: ms_cursos
-  #   build: ./back-end/ms_cursos
+  ms_cursos:
+    container_name: ms_cursos
+    build: ./back-end/ms_cursos
+    ports:
+      - "8000:8000"
 
   ms_authentication:
     container_name: ms_authentication
     build: ./back-end/ms_authentication/demo
-    # command: ["./wait-for-it.sh", "ms_user_db:3306", "--", "echo", "db is up"]
-    depends_on:
-      - ms_user_db
+    ports:
+      - "10200:10200"
+
+  ms_notification:
+    container_name: ms_notification
+    build: ./back-end/ms_notification
+    ports:
+      - "3000:3000"
+
+  ms_message:
+    container_name: ms_message
+    build: ./back-end/ms_message
+    ports:
+      - "4000:4000"
+    env_file: ./back-end/ms_message/env_vars.env
+
+  ms_activities:
+    container_name: ms_activities
+    build: ./back-end/ms_actividades
     ports:
       - "8080:8080"
 
