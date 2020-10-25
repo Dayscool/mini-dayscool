@@ -59,6 +59,12 @@ services:
     build: ./back-end/ms_actividades
     ports:
       - "8080:8080"
+  # ms_abac:
+  #   container_name: ms_abac
+  #   build: ./back-end/ms_abac
+  #   ports:
+  #     # Mapping the port to make the Phoenix app accessible outside of the container
+  #     - "80:80"
 
 networks:
   default:
