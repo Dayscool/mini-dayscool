@@ -4,7 +4,7 @@ services:
     container_name: api_getway
     build: ./api_getway/DayscoolAPI
     ports:
-      - "80:80"
+      - "2000:2000"
 
   ms_user_db:
     container_name: ms_user_db
