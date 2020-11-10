@@ -1,5 +1,10 @@
 version: "3"
 services:
+  web_app:
+    container_name: web_app
+    build: ./front-end/dayscool-web
+    ports:
+      - "10300:80"
   api_getway:
     container_name: api_getway
     build: ./api_getway/DayscoolAPI
