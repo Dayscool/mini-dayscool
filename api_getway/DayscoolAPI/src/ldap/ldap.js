@@ -39,7 +39,7 @@ async function searchUserLdap(usuario, contrasena) {
 	})
 
 	var promise = new Promise((resolve, reject)=> {
-		client.compare("uid=" + usuario +",cn=user,dc=arqsoft,dc=unal,dc=edu,dc=co", 'uid', usuario, function (_err, bool) {
+		client.compare("uid=" + usuario +",cn=user,dc=arqsoft,dc=unal,dc=edu,dc=co", 'userPassword', contrasena, function (_err, bool) {
 			resolve(bool) 
 			client.unbind()
 		});

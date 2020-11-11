@@ -23,10 +23,12 @@ async function crear_usuario(user2) {
 
 async function revisar_usuario(username, password) {
   return await searchUserLdap(username, password).then((res) => {
-    if(res) {
-      console.log(res)
-    }
-    return generalRequest(`${URL}/users/${username}/${password}`, "GET")
+    return generalRequest(`${URL}/users/${username}/${password}`, "GET").then((objeto) => {
+      if(res && objeto.username != null) {
+        return objeto;
+      }
+      return null;
+    })
   })
 }
 
