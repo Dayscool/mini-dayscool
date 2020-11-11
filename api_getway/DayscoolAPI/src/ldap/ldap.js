@@ -4,7 +4,7 @@ var ldapServer = 'ldap://172.17.0.1:389';
 
 
 
-const serverName = ',dc=arqsoft,dc=unal,dc=edu,dc=co';
+const serverName = ',dc=dayscool,dc=unal,dc=edu,dc=co';
 var user = 'cn=admin' +serverName;
 var password = 'admin';
 
