@@ -4,16 +4,17 @@ var ldapServer = 'ldap://172.17.0.1:389';
 
 
 
-var user = 'cn=admin,dc=arqsoft,dc=unal,dc=edu,dc=co';
+const serverName = ',dc=arqsoft,dc=unal,dc=edu,dc=co';
+var user = 'cn=admin' +serverName;
 var password = 'admin';
 
-
+const direccion = 'cn=user' + serverName;
 
 async function createLdapEntry( usuario, contrasena ) {
     var client = ldap.createClient({
 		url: ldapServer
     });
-	client.bind('cn=admin,dc=arqsoft,dc=unal,dc=edu,dc=co','admin', function(err) {
+	client.bind(user,'admin', function(err) {
 		console.log(err)
 	})
 
@@ -21,7 +22,8 @@ async function createLdapEntry( usuario, contrasena ) {
 		objectclass: ['account', 'simpleSecurityObject'],
 		userPassword: contrasena
 	};
-	client.add('uid='+ usuario +',cn=user,dc=arqsoft,dc=unal,dc=edu,dc=co', entry ,function(err) {
+	
+	client.add('uid='+ usuario + direccion, entry ,function(err) {
 			console.log(err)
 	});
 
@@ -39,7 +41,7 @@ async function searchUserLdap(usuario, contrasena) {
 	})
 
 	var promise = new Promise((resolve, reject)=> {
-		client.compare("uid=" + usuario +",cn=user,dc=arqsoft,dc=unal,dc=edu,dc=co", 'userPassword', contrasena, function (_err, bool) {
+		client.compare("uid=" + usuario + direccion, 'userPassword', contrasena, function (_err, bool) {
 			resolve(bool) 
 			client.unbind()
 		});
