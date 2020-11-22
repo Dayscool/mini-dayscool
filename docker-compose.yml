@@ -29,17 +29,23 @@ services:
     ports:
       - "10100:10100"
 
+  ms_auth_token:
+    container_name: ms_auth_token
+    build: ./back-end/new-auth
+    ports:
+      - "10500:10500"
+
   ms_cursos:
     container_name: ms_cursos
     build: ./back-end/ms_cursos
     ports:
       - "8000:8000"
 
-  ms_authentication:
-    container_name: ms_authentication
-    build: ./back-end/ms_authentication/demo
-    ports:
-      - "10200:10200"
+  # ms_authentication:
+  #   container_name: ms_authentication
+  #   build: ./back-end/ms_authentication/demo
+  #   ports:
+  #     - "10200:10200"
 
   ms_notification:
     container_name: ms_notification

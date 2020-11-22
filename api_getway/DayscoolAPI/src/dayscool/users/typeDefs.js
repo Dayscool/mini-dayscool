@@ -10,6 +10,10 @@ export const userTypeDef = `
       name: String!
       password: String!
   }
+  type Profesor{
+    name: String!
+    mail: String!
+  }
   input UserInput {
       username: String!
       mail: String!
@@ -26,15 +30,11 @@ export const userQueries = `
   getUserById(id:Int!): User!
   getUserByUsername(username:String!): User!
   getUserByMail(mail:String!): User!
+  getTeachers: [Profesor]!
   `;
-//Definir las mutaciones (POST PUT Y DELETE) 
+//Definir las mutaciones (POST PUT Y DELETE)
 export const userMutations = `
   createUser(user: UserInput!): User!
   updateUser(id: Int!, user: UserInput!): User!
   deleteUser(id: Int!): String
 `;
-
-
-
-
-
