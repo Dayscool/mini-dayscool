@@ -4,11 +4,11 @@ var ldapServer = 'ldap://172.17.0.1:389';
 
 
 
-const serverName = ',dc=arqsoft,dc=unal,dc=edu,dc=co';
+const serverName = ',dc=dayscool,dc=unal,dc=edu,dc=co';
 var user = 'cn=admin' +serverName;
 var password = 'admin';
 
-const direccion = 'cn=user' + serverName;
+const direccion = ',cn=user' + serverName;
 
 async function createLdapEntry( usuario, contrasena ) {
     var client = ldap.createClient({
@@ -23,7 +23,7 @@ async function createLdapEntry( usuario, contrasena ) {
 		userPassword: contrasena
 	};
 	
-	client.add('uid='+ usuario + direccion, entry ,function(err) {
+	client.add('uid='+ usuario +  direccion, entry ,function(err) {
 			console.log(err)
 	});
 
