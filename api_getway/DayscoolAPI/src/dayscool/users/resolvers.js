@@ -2,7 +2,6 @@ import { generalRequest, getRequest } from "../../utilities";
 import { url, port, entryPoint } from "./server";
 //Añadir la url correspondiente a su microservicio
 const URL = `http://${url}:${port}/${entryPoint}`;
-
 const resolvers = {
   //Añadir las definiciones por url de las request
   Query: {
@@ -12,6 +11,7 @@ const resolvers = {
       generalRequest(`${URL}/getUserByUsername`, "GET", username),
     getUserByMail: (_, { mail }) =>
       generalRequest(`${URL}/getUserByMail`, "GET", mail),
+    getTeachers: (_) => generalRequest(`${URL}/getTeachers`, "GET"),
   },
   Mutation: {
     createUser: (_, { user }) =>
