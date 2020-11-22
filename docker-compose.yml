@@ -59,6 +59,11 @@ services:
     build: ./back-end/ms_actividades
     ports:
       - "8080:8080"
+  soap:
+    container_name: soap
+    build: ./soap
+    ports:
+      - "6000:3000"
   sa-ldap:
     image: osixia/openldap
     container_name: sa_ldap
