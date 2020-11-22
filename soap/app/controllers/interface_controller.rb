@@ -6,11 +6,11 @@ class InterfaceController < ApplicationController
 
   soap_action "integer_to_string",
               :args   => nil,
-              :return => [{:nombre => :string, :color => :string}]
+              :return => [{:name => :string, :mail => :string}]
   def integer_to_string
-    response = HTTParty.post("https://9185459f-58e6-473e-98e0-82b11db8385a.mock.pstmn.io/gato")
+    response = HTTParty.post("http://172.17.0.1:5000/graphql", body: {"query":"{\n  getTeachers{\n    name\n    mail\n  }\n}",variables:"null",operationName:nil})
     print(response.body)
-    render :soap => JSON.parse(response.body.data)
+    render :soap => JSON.parse(response.body)["data"]["getTeachers"]
   end
   
   def information
