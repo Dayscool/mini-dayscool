@@ -8,7 +8,7 @@ const resolvers = {
   //Añadir las definiciones por url de las request
   Query: {
     getUserC: (_, { username, password }) =>
-      revisar_usuario(username, password)
+      generalRequest(`${URL}/users/${username}/${password}`, "GET"),
   },
   Mutation: {
     createUser2: (_, { user2 }) =>
