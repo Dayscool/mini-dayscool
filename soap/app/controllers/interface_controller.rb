@@ -1,5 +1,6 @@
 require 'httparty'
 require 'json'
+require 'savon'
 
 class InterfaceController < ApplicationController
   soap_service namespace: 'urn:WashOut'
@@ -13,6 +14,10 @@ class InterfaceController < ApplicationController
     render :soap => JSON.parse(response.body)["data"]["getTeachers"]
   end
   
-  def information
+  def consume
+    client = Savon.client(wsdl: 'http://ec2-54-234-177-146.compute-1.amazonaws.com:8080/service/userDetailsWsdl.wsdl')
+    response =client.call(:user_details, message: {email: params[:mail]})
+    
+    render :json => response.body[:user_details_response][:user]
   end
 end
