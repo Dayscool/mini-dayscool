@@ -93,7 +93,6 @@ const mergedTypeDefs = mergeSchemas(
   [
     userQueries,
     activitiesQueries,
-    authenticationQueries,
     conversationQueries,
     roleQueries,
     microserviceQueries,
