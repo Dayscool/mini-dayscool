@@ -1,0 +1,13 @@
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\config\JwtRequestFilter.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\controller\JwtAuthenticationController.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\model\UserDTO.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\SpringBootHelloWorldApplication.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\controller\AuthorizationController.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\model\DAOUser.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\config\WebSecurityConfig.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\model\JwtResponse.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\model\JwtRequest.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\config\JwtTokenUtil.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\service\JwtUserDetailsService.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\config\JwtAuthenticationEntryPoint.java
+C:\Users\andre\CodingProjects\Dayscool\back-end\new-auth\src\main\java\com\javainuse\dao\UserDao.java
