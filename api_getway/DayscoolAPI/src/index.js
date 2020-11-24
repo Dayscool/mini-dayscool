@@ -37,7 +37,8 @@ app.use(async (ctx, next) => {
   } else if (
     JSON.stringify(ctx.request.body).includes("login") ||
     JSON.stringify(ctx.request.body).includes("register") ||
-    JSON.stringify(ctx.request.body).includes("getTeachers")
+    JSON.stringify(ctx.request.body).includes("getTeachers") ||
+    JSON.stringify(ctx.request.body).includes("getUserByUsername")
   ) {
     await next();
   } else {

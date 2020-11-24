@@ -14,7 +14,7 @@ const resolvers = {
 };
 
 async function crear_usuario(userToRegister) {
-  await createLdapEntry(userToRegistert.username, userToRegister.password);
+  await createLdapEntry(userToRegister.username, userToRegister.password);
   return generalRequest(`${URL}/register`, "POST", userToRegister);
 }
 
